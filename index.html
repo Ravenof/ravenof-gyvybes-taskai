@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravenof Gyvybės Taškų Skaičiuoklė</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <h1>Ravenof Gyvybės Taškų Skaičiuoklė</h1>
+
+    <!-- Game mode buttons -->
+    <div class="game-mode">
+        <button onclick="playClickSound(); setMode(40)">1v1 (40 taškų)</button>
+        <button onclick="playClickSound(); setMode(60)">2v2 (60 taškų)</button>
+    </div>
+
+    <!-- Pagrindinis konteineris abiems žaidėjams -->
+    <div class="container">
+        <!-- Žaidėjas 1 -->
+        <div class="player">
+            <input type="text" id="player1-name-input" value="Žaidėjas 1" oninput="updatePlayerName('player1')" />
+            <p class="points" id="player1-points">Žaidėjas 1: 40 taškų</p>
+            <div class="buttons">
+                <button onclick="playClickSound(); changePoints('player1', -1)">-1</button>
+                <button onclick="playClickSound(); changePoints('player1', 1)">+1</button>
+                <button onclick="playClickSound(); changePoints('player1', -5)">-5</button>
+                <button onclick="playClickSound(); changePoints('player1', 5)">+5</button>
+                <button onclick="playClickSound(); changePoints('player1', -10)">-10</button>
+                <button onclick="playClickSound(); changePoints('player1', 10)">+10</button>
+            </div>
+        </div>
+
+        <!-- Žaidėjas 2 -->
+        <div class="player">
+            <input type="text" id="player2-name-input" value="Žaidėjas 2" oninput="updatePlayerName('player2')" />
+            <p class="points" id="player2-points">Žaidėjas 2: 40 taškų</p>
+            <div class="buttons">
+                <button onclick="playClickSound(); changePoints('player2', -1)">-1</button>
+                <button onclick="playClickSound(); changePoints('player2', 1)">+1</button>
+                <button onclick="playClickSound(); changePoints('player2', -5)">-5</button>
+                <button onclick="playClickSound(); changePoints('player2', 5)">+5</button>
+                <button onclick="playClickSound(); changePoints('player2', -10)">-10</button>
+                <button onclick="playClickSound(); changePoints('player2', 10)">+10</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="click-sound" src="click_sound.mp3"></audio> <!-- Clicking sound effect -->
+    <audio id="cheering-sound" src="cheering_sound.mp3"></audio> <!-- Cheering sound effect -->
+
+    <script src="./script.js"></script>
+</body>
+</html>

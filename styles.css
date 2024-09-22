@@ -1,0 +1,131 @@
+body {
+    background-image: url('old_paper.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+.game-mode {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* 1v1 ir 2v2 mygtukai */
+.game-mode button {
+    font-size: 24px; /* Sumažintas šrifto dydis */
+    padding: 10px 20px; /* Sumažintas padding */
+    width: 300px; /* Nustatytas fiksuotas plotis */
+    height: 100px; /* Nustatytas fiksuotas aukštis */
+    background-color: #8B4513; /* Medžio spalva */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('wood_button.png');
+    background-size: cover;
+}
+
+.game-mode button:hover {
+    background-image: url('wood_button_hover.png');
+}
+
+.game-mode button:active {
+    background-image: url('wood_button_pressed.png');
+    transform: scale(0.98); /* Lengvas susitraukimas paspaudus */
+}
+
+.game-mode button:focus {
+    outline: none;
+}
+
+/* Iššokanti lentelė su laimėtoju */
+.winner-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 24px;
+    z-index: 9999;
+}
+
+/* Likusios medinių mygtukų stiliai žaidėjų taškų keitimui */
+button {
+    font-size: 24px;
+    padding: 10px;
+    background-image: url('wood_button.png');
+    background-size: 100% 100%;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    outline: none;
+}
+
+button:hover {
+    background-image: url('wood_button_hover.png');
+}
+
+button:active {
+    background-image: url('wood_button_pressed.png');
+    transform: scale(0.98);
+}
+
+button:focus {
+    outline: none;
+    border: none;
+}
+
+/* Likusi stiliaus dalis */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.player {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.player input {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.points {
+    font-size: 32px;
+    font-weight: bold;
+    color: green;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
