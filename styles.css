@@ -19,15 +19,16 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap; /* Leidžia mygtukams pasiskirstyti į kelias eilutes mobiliajame ekrane */
 }
 
 /* 1v1 ir 2v2 mygtukai */
 .game-mode button {
-    font-size: 24px; /* Sumažintas šrifto dydis */
-    padding: 10px 20px; /* Sumažintas padding */
-    width: 300px; /* Nustatytas fiksuotas plotis */
-    height: 100px; /* Nustatytas fiksuotas aukštis */
-    background-color: #8B4513; /* Medžio spalva */
+    font-size: 24px;
+    padding: 10px 20px;
+    width: 300px; /* Fiksuotas plotis didesniems ekranams */
+    height: 100px;
+    background-color: #8B4513;
     color: white;
     border: none;
     border-radius: 8px;
@@ -102,6 +103,7 @@ button:focus {
     align-items: center;
     gap: 50px;
     margin-top: 50px;
+    flex-wrap: wrap; /* Užtikrina, kad mobiliajame ekrane žaidėjų blokai išsidėstytų vertikaliai */
 }
 
 .player {
@@ -128,4 +130,58 @@ button:focus {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+}
+
+/* Pritaikymas mobiliesiems ekranams */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    /* Mygtukai užims visą plotį mobiliesiems */
+    .game-mode button {
+        width: 90%; /* Mygtukai užims 90% pločio mobiliajame ekrane */
+        max-width: 300px; /* Užtikrintas maksimalus plotis */
+        height: 80px; /* Sumažintas aukštis */
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* Pritaikymas planšetėms */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .game-mode button {
+        width: 80%;
+        padding: 20px;
+        font-size: 18px;
+    }
+
+    button {
+        width: 80%;
+        padding: 20px;
+        font-size: 18px;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
 }
